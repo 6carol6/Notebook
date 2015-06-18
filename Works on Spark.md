@@ -2,8 +2,17 @@
 
 ####调优####
 
-[Tuning Java Garbage Collection for Spark Application](https://databricks.com/blog/2015/05/28/tuning-java-garbage-collection-for-spark-applications.html)  
+[Data Storage Tips for Optimal Spark Performance](https://spark-summit.org/2015/events/data-storage-tips-for-optimal-spark-performance/)(Databricks) - spark summit'15  
+Spark能够分析和存储的数据类型很多，plain text, JSON, XML, Parquet等多种数据结构都能搞定。但是能处理这些类型的文件并不是说在这些文件上都能够获得同样好的性能。
+  
+- Issues you’ll encounter when processing excessively large XML input files. 
+- Why choose parquet files for Spark SQL? 
+- How coalescing many small files may give you better performance.
+
+[Tuning Java Garbage Collection for Spark Application](https://databricks.com/blog/2015/05/28/tuning-java-garbage-collection-for-spark-applications.html)(Intel)  
 减少老年态GC的频率, G1-GC  
+
+[Taming GC Pauses for Humongous Java Heaps in Spark Graph Computing](https://spark-summit.org/2015/events/taming-gc-pauses-for-humongous-java-heaps-in-spark-graph-computing/)(Intel) - spark summit'15  
 
 [Accelerating Spark with RDMA for Big Data Processing: Early Experiences](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6925713&tag=1)  
 
