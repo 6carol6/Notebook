@@ -117,3 +117,123 @@ Spark和Hadoop对比
 ####Spark on Mesos – A Deep Dive
 
 [video](http://livestream.com/accounts/8038169/sparksummit2015-tracka) - 第6个视频01:27:58  
+
+####Large-Scale Lasso and Elastic-Net Regularized Generalized Linear Models
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频18:30  
+
+####Dynamic Community Detection for Large-scale e-Commerce data with Spark Streaming and GraphX
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频47:48  
+
+####Digital Attribution Modeling Using Apache Spark
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频1:13:03  
+
+####Building, Debugging, and Tuning Spark Machine Learning Pipelines
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频2:16:00  
+
+####IndexedRDD: Efficient Fine-Grained Updates for RDDs
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频2:48:00  
+
+####Healthcare Predictive Analytics within the OR
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频3:18:00  
+
+####Deconstructing Recommendations on Spark
+How I learned to stop worrying and love the shuffle  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频3:57:50  
+
+####Flyby: Improved Dense Matrix Multiplication
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频4:17:20  
+
+####Extending Word2Vec for Performance and Semi-Supervised Learning
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频4:44:20  
+
+####TRAINING: DevOps with Apache Spark Workshop (Advanced)
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第2个视频42:36+第4个视频+第5个视频29:30+第6个视频  
+
+####Large-Scale Lasso and Elastic-Net Regularized Generalized Linear Models
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第3个视频开头（只有1分钟左右，所以我并不确定这是哪段视频）  
+
+####SparkR: The Past, the Present and the Future
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第3个视频2:51  
+
+####Data Storage Tips for Optimal Spark Performance
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第3个视34:30  
+
+(trackerB第7个视频和第1个重复了)
+
+trackerC的第1个视频是圆桌问答之类的  
+
+####TRAINING: Data Science with Apache Spark (Advanced)
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第2个视39:49（5hours）  
+
+####Automated Machine Learning Using Spark Mllib to Improve Customer Experience
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视04:15  
+
+####Solving Low Latency Query Over Big Data with Spark SQL
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视30:12  
+
+####A Big Data Lake Based on Spark for BBVA Bank
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视01:02:40  
+
+####Sqoop on Spark for Data Ingestion
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视01:22:05  
+
+(第4个视频打不开)
+
+####Use of Spark MLlib for Predicting the Offlining of Digital Media
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视09:09  
+
+####Spark and Spark Streaming at Netflix
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视37:48  
+
+####Lessons Learned with Spark at the US Patent & Trademark Office
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视1:13:02  
+
+####Appraiser : How Airbnb Generates Complex Models in Spark for Demand Prediction
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视2:08:22  
+
+####Integrating Spark and Solr
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视2:42:00  
+
+####Diagnosing Open-Source Community Health with Spark
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视3:15:30  
+
+####Building a Data Warehouse for Business Analytics using Spark SQL
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视3:40:12  
+
+####Towards Benchmarking Modern Distributed Streaming Systems
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:10:36  
+
+####Migrating Complex Data Aggregation from Hadoop to Spark
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:40:32  
+
+####The Little Warehouse That Couldn’t, Or: How We Learned to Stop Worrying and Move to Spark
+
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:59:26  
+
+
