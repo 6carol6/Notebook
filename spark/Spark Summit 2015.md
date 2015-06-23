@@ -20,6 +20,35 @@
 
 [video](http://livestream.com/accounts/8038169/sparksummit2015-tracka) - 第7个视频02:26:50  
 
+**Spark and Hadoop - How Can We Do Better**  
+
+- Resource Management
+	- YARN for multi-tenant, diverse worklods with predictable SLAs
+- Tiered Memory Storage
+	- HDFS in-memory tier - External BlockStore for RDD Cache
+- SparkSQL & Hive for SQL
+	- Interop with modern Metastore/HS2, optimized ORC support, advanced analytics e.g. Geospatial
+- Spark & NoSQL
+	- Deep integration with HBase via DataSources/Catalyst for Predicate/Aggregate Pushdown
+- Connect The Dots - Algorithms to Use-Cases
+	- Higher-level ML Absractions - E.g. OneVsRest Validation, Tuning, Pipline assembly, Model export/retraing ...
+- Ease of Use
+	- Apache Zeppelin for interactive notebooks
+- Matadata & Governance
+	- Apache Atlas for metadata & Apache Falcon fupport for Spark pipeline
+- Security & Operations
+	- Apache Ranger managed authorization and deployment/management via Apache Ambari
+- Deployable Anywhere
+	- Linux, Windows, on-premises or cloud
+- Self-Service Spark in the Cloud
+	- Easy launch of Data Science clusters via Cloudbreak and Ambari - for Azure, AWS, GCP, OpenStack, Docker
+
+**Real World Use Case**  
+
+- Real-time, Predictive App
+- Datascience
+- ML:Spark SQL:Hive NoSQL:HBase Stream
+
 ####A Tale of a Data-Driven Culture
 
 [video](http://livestream.com/accounts/8038169/sparksummit2015-tracka) - 第7个视频02:38:15  
@@ -328,64 +357,64 @@ trackerC的第1个视频是圆桌问答之类的
 
 ####TRAINING: Data Science with Apache Spark (Advanced)
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第2个视39:49（5hours）  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第2个视频39:49（5hours）  
 
 ####Automated Machine Learning Using Spark Mllib to Improve Customer Experience
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视04:15  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视频04:15  
 
 ####Solving Low Latency Query Over Big Data with Spark SQL
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视30:12  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视频30:12  
 
 ####A Big Data Lake Based on Spark for BBVA Bank
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视01:02:40  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视频01:02:40  
 
 ####Sqoop on Spark for Data Ingestion
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视01:22:05  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第3个视频01:22:05  
 
 (第4个视频打不开)
 
 ####Use of Spark MLlib for Predicting the Offlining of Digital Media
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视09:09  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频09:09  
 
 ####Spark and Spark Streaming at Netflix
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视37:48  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频37:48  
 
 ####Lessons Learned with Spark at the US Patent & Trademark Office
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视1:13:02  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频01:13:02  
 
 ####Appraiser : How Airbnb Generates Complex Models in Spark for Demand Prediction
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视2:08:22  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频2:08:22  
 
 ####Integrating Spark and Solr
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视2:42:00  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频2:42:00  
 
 ####Diagnosing Open-Source Community Health with Spark
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视3:15:30  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频3:15:30  
 
 ####Building a Data Warehouse for Business Analytics using Spark SQL
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视3:40:12  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频3:40:12  
 
 ####Towards Benchmarking Modern Distributed Streaming Systems
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:10:36  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频4:10:36  
 
 ####Migrating Complex Data Aggregation from Hadoop to Spark
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:40:32  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频4:40:32  
 
 ####The Little Warehouse That Couldn’t, Or: How We Learned to Stop Worrying and Move to Spark
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视4:59:26  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackc) - 第5个视频4:59:26  
 
 
