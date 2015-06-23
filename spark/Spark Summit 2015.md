@@ -227,7 +227,7 @@ How I learned to stop worrying and love the shuffle
 
 ####Data Storage Tips for Optimal Spark Performance
 
-[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第3个视34:30  
+[video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第3个视频34:30  
 
 **Goal: Understand the Best Practices for Storing and Working with Data in files with Spark**  
 
