@@ -138,6 +138,36 @@ Spark和Hadoop对比
 
 [video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频2:48:00  
 
+**Tradeoff**
+  
+- Immutability
+	- fault tolerance
+	- straggler mitigation
+	- dataset reusability
+	- parallel recovery
+- Fine-grained updates
+	- streaming
+	- aggregation
+	- incremental algorithms
+
+Can we have both? Yes, we have IndexedRDD now.  
+
+原有的RDD的每一个partition都是一个Array，IndexedRDD的每一个partition都是一个Persistent Adaptive Radix Tree(PART)  
+
+**Radix Tree**
+
+- Sorted order traversals (ulike hash tables)
+- Better asymptotic performance than binary search trees for long keys (O(k) vs O(klogn))
+- Very efficient union and intersection operations
+- Predictable performance: no rehashing or rebalancing
+
+**Limitations**
+
+- GC pauses
+	- Future work: Off-heap storage w/ reference counting
+- Scan performance
+	- Future work: Layout-aware allocator
+
 ####Healthcare Predictive Analytics within the OR
 
 [video](http://livestream.com/accounts/8038169/sparksummit2015-trackb) - 第1个视频3:18:00  
