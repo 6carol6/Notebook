@@ -16,7 +16,7 @@ Present a design and implementation of Bandwidth Enforcer(BwE), a global, hierar
 @University of Wisconsin-Madison, HP Labs, Banyan, HP Networking  
 
 现象：用SDN的人很多，创建出了各种不同的规则。导致policy abstractions and frameworks do not support natural expression and automatic composition of high-level policies from diverse sources.  
-Tackle the open problem of automatic. correct and fast composition of multiple independently specified network policies.  
+Tackle the open problem of automatic, correct and fast composition of multiple independently specified network policies.  
 
 ####Central Control Over Distributed Routing
 @Universite catholique de Louvain, ETH Zurich, Princeton University  
@@ -45,6 +45,21 @@ We contribute by a **fast and scalable software routing lookup algorithm** based
 ####Pingmesh: A Large-Scale System for Data Center Network Latency Measurement and Analysis
 
 ###Session 3.2: Experience Track2
+
+####Large-scale measurements of wireless network behavior
+
+####End-User Mapping: Next Generation Request Routing for Content Delivery
+
+####Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network
+@Google  
+
+Google share经验的文章。  
+We present our approach for overcoming the cost, operational complexity, and limited scale endemic to datacenter networks a decade ago.  
+Three themes unify the five generations of datacenter networks detailed in this paper.  
+
+1. Multi-stage Clos topologies built from commodity switch silicon can support cost-effective deployment of building-scale networks.
+2. Much of the general, but complex, decentralized network routing and management protocols supporting arbitrary deployment scenarios were overkill for single-operator, pre-planned datacenter networks. We built a **centralized control mechanism** based on a global configuration pushed to all datacenter switches.  
+3. Modular hardware design coupled with simple, robust software allowed our design to also support inter-cluster and wide-area networks.
 
 ###Session 4: Middleboxes
 
