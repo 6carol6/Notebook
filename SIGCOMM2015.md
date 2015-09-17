@@ -48,7 +48,11 @@ We contribute by a **fast and scalable software routing lookup algorithm** based
 
 ####Large-scale measurements of wireless network behavior
 
+wireless的先不看  
+
 ####End-User Mapping: Next Generation Request Routing for Content Delivery
+
+内容分发网络(Content Delivery Networks, CDNs)能够使得用户请求到比较近的数据。这个时候需要用户能够使用DNS协议路由到比较近的服务器请求数据。  
 
 ####Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network
 @Google  
@@ -85,6 +89,7 @@ We present a new design for fault-tolerance in middleboxes that achieves these t
 @CMU, Intel Labs, Harvard University, Connectem Inc.  
 
 Apply a compact lookup structure to route packets directly to the appropriate handling node, without incurring the cost of multiple hops across the internal interconnect.   
+用了一种神奇的方法让数据包直达handling node  
 
 ###Session 5: Wireless
 
