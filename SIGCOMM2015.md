@@ -52,6 +52,8 @@ wireless的先不看
 
 ####End-User Mapping: Next Generation Request Routing for Content Delivery
 
+@Akamai  
+
 内容分发网络(Content Delivery Networks, CDNs)能够使得用户请求到比较近的数据。这个时候需要用户能够使用DNS协议路由到比较近的服务器请求数据。  
 
 ####Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network
