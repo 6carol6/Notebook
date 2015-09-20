@@ -54,7 +54,7 @@ wireless的先不看
 
 @Akamai  
 
-内容分发网络(Content Delivery Networks, CDNs)能够使得用户请求到比较近的数据。这个时候需要用户能够使用DNS协议路由到比较近的服务器请求数据。  
+内容分发网络(**Content Delivery Networks, CDNs**)能够使得用户请求到比较近的数据。这个时候需要用户能够使用DNS协议路由到比较近的服务器请求数据。  
 
 ####Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network
 @Google  
@@ -99,7 +99,27 @@ Apply a compact lookup structure to route packets directly to the appropriate ha
 
 ###Session 6: CDN and wide area infrastructure
 
-这个不看。  
+####Practical, Real-time Centralized Control for CDN-based Live Video Delivery
+
+@CMU, KAIST, Conviva Inc.  
+
+Live video delivery is expected to reach a peak of 50 Tbps this year.->真的么，吓哭了。This surging popularity is fundamentally changing the Internet video delivery landscape. CDNs must meet users' demands for fast join times, high bitrates, and low buffering ratios, and low buffering ratios, while minimizing their own cost of delivery and responding to issues in real-time. Wide-area latency, loss, and failures, as well as varied workloads ("meage-events" to long-tail), make meeting these demands challenging.  
+
+An analysis of video sessions concluded that a centralized controller could improve user experience, but CDN systems have shied away from such designs due to the difficulty of quickly handling failures, a requirement of both operators and users. **We introduce VDN, a centralized algorithm for live video optimization.** VDN provides CDN operators with real-time, fine-grained control.  
+
+####A Control-Theoretic Approach for Dynamic Adaptive Video Streaming over HTTP
+
+@CMU  
+
+对video application做用户可察觉的QoS是非常重要的，而网络对这个的支持比较少，所以处处是瓶颈。因此，一个客户端比特率自适应的算法对用户体验是很重要的。之前的工作告诉我们了一些目前最好的商用解决方案的限制。  
+
+- 客户端的比特自适应逻辑能有多好？（比特率估计vs缓存占用）
+- How well specific classes of approaches will perform under diverse operating regimes (e.g., high throughput variability)
+- 实际上如何平衡不同的QoE目标？（startup delay vs. rebuffering）。
+
+1. To bring some rigor to this space, we deploy a principled control-theoretic model to reason about a broad spectrum of strategies.
+2. We propose a novel *model predictive control* algorithm that can optimally combine throughput and buffer occupancy information to outperform traditional approaches.
+3. We present a practical implementation in a reference video player to validate our approach using realistic trace-driven emulations.
 
 ###Session 7.1: Scheduling and resource management
 
