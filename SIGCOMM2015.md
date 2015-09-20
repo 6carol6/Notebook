@@ -125,10 +125,46 @@ An analysis of video sessions concluded that a centralized controller could impr
 
 ####Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale
 
+@California Institute of Technology, Microsoft Research, University of Southern California  
 
+集群的size和复杂度变得越来越大了，providing scalable and predictable performance is an increasingly important challenge. 获得predictable performance的一个关键的障碍就是stragglers（就是那些比预想花费更长时间完成的任务）。面对stragglers，现有的最好的解决方案就是*speculation*，也就是随机选择多个copy执行，然后选择运行最快的那个结果。In this work, we present **Hopper**, a job scheduler that is speculation-aware, i.e., that integrates the tradeoffs associated with speculation into job scheduling decisions.  
 
 ####Silo: Predictable Message Latency in the Cloud
 
 ###Session 7.2: Scheduling and resource management
 
 ####Network-Aware Scheduling for Data-Parallel Jobs: Plan When You Can
+
+####Low Latency Geo-distributed Data Analytics
+
+####Efficient Coflow Scheduling Without Prior Knowledge
+
+###Session8: Data center networking
+
+####Condor: Better Topologies through Declarative Design
+
+####Presto: Edge-based Load Balancing for Fast Datacenter Networks
+
+####Packet-Level Telemetry in Large Datacenter Networks
+
+####Enabling End-Host Network Functions
+
+###Session 9: Congestion control and transport protocols
+
+####Adaptive Congestion Control for Unpredictable Cellular Networks
+
+####Congestion Control for Large-Scale RDMA deployments
+
+####TIMELY: RTT-based Congestion Control for the Datacenter
+
+####R2C2: A Network Stack or Rack-scale Computers
+
+###Session 10: Wide area networks and traffic
+
+####InterTubes: A Study of the US Long-haul Fiber-optic Infrastructure
+
+####Spatiotemporal Traffic Matrix Synthesis
+
+###Session 11: Security, Privacy and Censorship
+
+这个也不看啦~
