@@ -5,6 +5,7 @@ This is a collection of URLs that carolz is interested in.
 ####System
 
 [Distributed systems - for fun and profit](http://book.mixu.net/distsys/)  
+[鸟哥的Linux私房菜](http://vbird.dic.ksu.edu.tw/)  
 
 ####Idea
 [Tech Idea Generator](http://bwasti.com/techideas)  
