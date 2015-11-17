@@ -141,6 +141,8 @@ An analysis of video sessions concluded that a centralized controller could impr
 
 ####Efficient Coflow Scheduling Without Prior Knowledge
 
+Existing efficient schedulers require a priori coflow information and ignore cluster dynamics like pipeling, task failures, and speculative executions, which limit their applicability. Schedulers without prior knowledge compromise on performance to avoid head-of-line blocking. In this paper, we present **Aalo** that strikes a balance and efficiently schedules coflows **without prior knowledge**.
+
 ###Session8: Data center networking
 
 ####Condor: Better Topologies through Declarative Design
