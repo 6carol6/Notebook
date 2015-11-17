@@ -15,6 +15,7 @@ This is a collection of URLs that carolz is interested in.
 [Clustering Datasets](http://cs.joensuu.fi/sipu/datasets/)  
 [城市计算-Microsoft Research](http://research.microsoft.com/apps/mobile/showpage.aspx?page=/en-US/projects/urbancomputing/cn.aspx)  
 [Stop Words](https://github.com/6/stopwords)  
+[Norse Attack Map](http://map.norsecorp.com/)
 
 ####Research
 [A guideline for students doing networking research](http://cs.nju.edu.cn/lwz/swim/guide.html)
