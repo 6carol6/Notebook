@@ -129,6 +129,8 @@ An analysis of video sessions concluded that a centralized controller could impr
 
 集群的size和复杂度变得越来越大了，providing scalable and predictable performance is an increasingly important challenge. 获得predictable performance的一个关键的障碍就是stragglers（就是那些比预想花费更长时间完成的任务）。面对stragglers，现有的最好的解决方案就是*speculation*，也就是随机选择多个copy执行，然后选择运行最快的那个结果。In this work, we present **Hopper**, a job scheduler that is speculation-aware, i.e., that integrates the tradeoffs associated with speculation into job scheduling decisions.  
 
+当然啦，为straggler创建speculative copies是很普遍的解决straggler慢的做法。这篇文章重在选择straggler的speculative copies还是其他job的origin copies。  
+
 ####Silo: Predictable Message Latency in the Cloud
 
 ###Session 7.2: Scheduling and resource management
