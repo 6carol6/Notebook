@@ -1,11 +1,13 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 ###Scheduling
 
 开头三篇文章都来自UC Berkeley的[Mosharaf Chowdhury](https://amplab.cs.berkeley.edu/author/mchowdhury)。可以看到是围绕Coflow的调度的。第一篇文章首先为Coflow建模，后两篇进行inter-coflow scheduling。第一篇文章发表于Hotnets'12，后两篇分别发表于SIGCOMM'14和'15。  
 
 ####Coflow: A Networking Abstraction for Cluster Application
 
-这篇文章定义Coflow是
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= c(S,D) = {f_1,f_2,...,f_{|c|}}" style="border:none;">
+这篇文章定义Coflow是$c(S,D) = \{f_1,f_2,...,f_{|c|}\}$
+这篇文章定义Coflow是$c(S,D) = {f_1,f_2,...,f_{|c|}}$
 
 ####Efficient Coflow Scheduling with Varys
 
