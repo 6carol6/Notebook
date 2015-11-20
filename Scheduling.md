@@ -1,17 +1,20 @@
-###Scheduling
+#Scheduling
 
-开头三篇文章都来自UC Berkeley的[Mosharaf Chowdhury](https://amplab.cs.berkeley.edu/author/mchowdhury)。可以看到是围绕Coflow的调度的。第一篇文章首先为Coflow建模，后两篇进行inter-coflow scheduling。第一篇文章发表于Hotnets'12，后两篇分别发表于SIGCOMM'14和'15。  
+前四篇文章都来自UC Berkeley。  
+开头三篇都来自[Mosharaf Chowdhury](https://amplab.cs.berkeley.edu/author/mchowdhury)。可以看到是围绕Coflow的调度的。第一篇文章首先为Coflow建模，后两篇进行inter-coflow scheduling。第一篇文章发表于Hotnets'12，后两篇分别发表于SIGCOMM'14和'15。  
+第四篇来自[Kay Ousterhout](https://amplab.cs.berkeley.edu/author/kousterhout)。是针对Spark的flow的调度。发表于SOSP'13。  
+第五篇是California Institute of Technology, Microsoft Research, University of Southern California合作的，发表于SIGCOMM'15。  
 
-####Coflow: A Networking Abstraction for Cluster Application
+###Coflow: A Networking Abstraction for Cluster Application
 
-这篇文章定义Coflow是<img src="http://chart.googleapis.com/chart?cht=tx&chl= c(S,D) = \lbrace f_1,f_2,...,f_{|c|}\rbrace" style="border:none;">
-
-
-####Efficient Coflow Scheduling with Varys
+这篇文章定义Coflow是$$ c(S,D) = \lbrace f_1,f_2,...,f_{|c|}\rbrace$$其中$f_1,f_2$这些表示coflow中的一条一条的流，$S$表示源节点的集合，$D$表示目的节点的集合。
 
 
+###Efficient Coflow Scheduling with Varys
 
-####Efficient Coflow Scheduling Without Prior Knowledge
+
+
+###Efficient Coflow Scheduling Without Prior Knowledge
 
 Existing efficient schedulers require a priori coflow information and ignore cluster dynamics like pipeling, task failures, and speculative executions, which limit their applicability. Schedulers without prior knowledge compromise on performance to avoid head-of-line blocking. In this paper, we present **Aalo** that strikes a balance and efficiently schedules coflows **without prior knowledge**.  
 
@@ -21,7 +24,12 @@ Existing efficient schedulers require a priori coflow information and ignore clu
 - Multiple waves in a single stage: preventing all flows within a coflow from starting together.
 - Task failures and speculation result in redundant flows: the exact number of flows or their endpoints cannot be determined until a coflow has completed.
 
-####Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale
+###Sparrow: Distributed, Low Latency Scheduling
+
+这篇文章是针对Spark做的调度。
+![图片](http://i766.photobucket.com/albums/xx304/mszxw999/blog/QQ20150510100237.png)
+
+###Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale
 
 @California Institute of Technology, Microsoft Research, University of Southern California  
 
