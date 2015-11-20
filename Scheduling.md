@@ -6,6 +6,7 @@
 
 这篇文章定义Coflow是
 <img src="http://www.forkosh.com/mathtex.cgi? c(S,D)={f_1,f_2,...,f_{|c|}}">
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= c(S,D)=\{f_1,f_2,...,f_{|c|}\}" style="border:none;">
 
 ####Efficient Coflow Scheduling with Varys
 
