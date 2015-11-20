@@ -1,5 +1,8 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
 ###Scheduling
 
 开头三篇文章都来自UC Berkeley的[Mosharaf Chowdhury](https://amplab.cs.berkeley.edu/author/mchowdhury)。可以看到是围绕Coflow的调度的。第一篇文章首先为Coflow建模，后两篇进行inter-coflow scheduling。第一篇文章发表于Hotnets'12，后两篇分别发表于SIGCOMM'14和'15。  
