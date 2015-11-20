@@ -4,7 +4,7 @@
 
 ####Coflow: A Networking Abstraction for Cluster Application
 
-这篇文章定义Coflow是<img src="http://www.forkosh.com/mathtex.cgi? c(S,D) = \lbrace f_1,f_2,...,f_{|c|}\rbrace">
+这篇文章定义Coflow是<img src="http://www.forkosh.com/mathtex.cgi? c(S,D) = \lbracef_1,f_2,...,f_{|c|}\rbrace">
 
 
 ####Efficient Coflow Scheduling with Varys
