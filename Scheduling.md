@@ -6,8 +6,8 @@
 
 ####Coflow: A Networking Abstraction for Cluster Application
 
-这篇文章定义Coflow是$c(S,D) = \{f_1,f_2,...,f_{|c|}\}$
-这篇文章定义Coflow是$c(S,D) = {f_1,f_2,...,f_{|c|}}$
+这篇文章定义Coflow是$$c(S,D) = \{f_1,f_2,...,f_{|c|}\}$$
+这篇文章定义Coflow是$$c(S,D) = {f_1,f_2,...,f_{|c|}}$$
 
 ####Efficient Coflow Scheduling with Varys
 
