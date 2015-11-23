@@ -26,7 +26,7 @@
 	- In 1769, when Napoleon was born, Corsica had but recently been acquired by France.
 - 限制性定语从句通常不以逗号开头
 	- The candidate who best meets these requirements will obtain the place.
-- 缩略语etc.和jr.（放在与父亲同名的儿子的名字后面）的前面一定要加逗号，如果这句话还没结束，后面也要加逗号
+- 缩略语etc.和jr.（junior的简写，放在与父亲同名的儿子的名字后面）的前面一定要加逗号，如果这句话还没结束，后面也要加逗号
 - 如果插入语前面有连接词，把逗号放在连接词之前
 	- He saw us coming, and unaware that we had learned of his treachery, greeted us with a smile.
 
