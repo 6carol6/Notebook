@@ -22,3 +22,4 @@ This is a collection of URLs that carolz is interested in.
 
 ####Coding
 [Coding Style Conventions and Standards](https://github.com/SalGnt/cscs)  
+[简明Vim练级攻略](http://coolshell.cn/articles/5426.html)  
