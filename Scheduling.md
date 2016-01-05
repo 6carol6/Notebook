@@ -1,38 +1,18 @@
 #Scheduling
 
-前四篇文章都来自UC Berkeley。  
-开头三篇都来自[Mosharaf Chowdhury](https://amplab.cs.berkeley.edu/author/mchowdhury)。可以看到是围绕Coflow的调度的。第一篇文章首先为Coflow建模，后两篇进行inter-coflow scheduling。第一篇文章发表于Hotnets'12，后两篇分别发表于SIGCOMM'14和'15。  
-第四篇来自[Kay Ousterhout](https://amplab.cs.berkeley.edu/author/kousterhout)。是针对Spark的flow的调度。发表于SOSP'13。  
-第五篇是California Institute of Technology, Microsoft Research, University of Southern California合作的，发表于SIGCOMM'15。  
+###Flow
+- [Coflow: A Networking Abstraction for Cluster Application](http://delivery.acm.org/10.1145/2400000/2390237/p31-chowdhury.pdf)
+- [Efficient Coflow Scheduling with Varys](http://delivery.acm.org/10.1145/2630000/2626315/p443-stoica.pdf)
+- [Efficient Coflow Scheduling Without Prior Knowledge(Aalo)](http://delivery.acm.org/10.1145/2790000/2787480/p393-chowdhury.pdf)
 
-###Coflow: A Networking Abstraction for Cluster Application
+###Task
+- [Sparrow: Distributed, Low Latency Scheduling](http://delivery.acm.org/10.1145/2530000/2522716/p69-ousterhout.pdf)
+- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf)
 
-这篇文章定义Coflow是$$ c(S,D) = \lbrace f_1,f_2,...,f_{|c|}\rbrace$$其中$f_1,f_2$这些表示coflow中的一条一条的流，$S$表示源节点的集合，$D$表示目的节点的集合。
+###Colocation
+- [Network-Aware Scheduling for Data-Parallel Jobs: Plan When You Can(Corral)](http://delivery.acm.org/10.1145/2790000/2787488/p407-jalaparti.pdf)
+- [Low Latency Geo-distributed Data Analytics(Iridium)](http://research.microsoft.com/en-us/um/people/ga/gda.pdf)
 
-
-###Efficient Coflow Scheduling with Varys
-
-
-
-###Efficient Coflow Scheduling Without Prior Knowledge
-
-Existing efficient schedulers require a priori coflow information and ignore cluster dynamics like pipeling, task failures, and speculative executions, which limit their applicability. Schedulers without prior knowledge compromise on performance to avoid head-of-line blocking. In this paper, we present **Aalo** that strikes a balance and efficiently schedules coflows **without prior knowledge**.  
-
-**Problems: coflow schedulers that rely on prior knowledge**  
-
-- Pipelining between successive computation stages: data is transferred as soon as it is generated - making it hard to know the size of each flow.
-- Multiple waves in a single stage: preventing all flows within a coflow from starting together.
-- Task failures and speculation result in redundant flows: the exact number of flows or their endpoints cannot be determined until a coflow has completed.
-
-###Sparrow: Distributed, Low Latency Scheduling
-
-这篇文章是针对Spark做的调度。
-![图片](http://i766.photobucket.com/albums/xx304/mszxw999/blog/QQ20150510100237.png)
-
-###Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale
-
-@California Institute of Technology, Microsoft Research, University of Southern California  
-
-集群的size和复杂度变得越来越大了，providing scalable and predictable performance is an increasingly important challenge. 获得predictable performance的一个关键的障碍就是stragglers（就是那些比预想花费更长时间完成的任务）。面对stragglers，现有的最好的解决方案就是*speculation*，也就是随机选择多个copy执行，然后选择运行最快的那个结果。In this work, we present **Hopper**, a job scheduler that is speculation-aware, i.e., that integrates the tradeoffs associated with speculation into job scheduling decisions.  
-
-当然啦，为straggler创建speculative copies是很普遍的解决straggler慢的做法。这篇文章重在选择straggler的speculative copies还是其他job的origin copies。  
+###Resource Assign
+- [Dominant Resource Fairness: Fair Allocation of Multiple Resource Types(DRF)](http://static.usenix.org/events/nsdi11/tech/full_papers/Ghodsi.pdf) - NSDI'11
+- [Performance Isolation and Fairness for Multi-Tenant Cloud Storage](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf) - OSDI'12
