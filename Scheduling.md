@@ -10,15 +10,15 @@
 
 ###Task
 - [Sparrow: Distributed, Low Latency Scheduling](http://delivery.acm.org/10.1145/2530000/2522716/p69-ousterhout.pdf) - SOSP'13
-- [GRASS: Trimming Stragglers in Approximation Analytics](https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-ananthanarayanan.pdf) - NSDI'11
-- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf) - SIGCOMM'15
+- Speculative tasks
+	- [GRASS: Trimming Stragglers in Approximation Analytics](https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-ananthanarayanan.pdf) - NSDI'11
+	- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf) - SIGCOMM'15
+- Coordinating Data and Task
+	- [Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling](http://delivery.acm.org/10.1145/1760000/1755940/p265-zaharia.pdf) - EuroSys'10
+	- [Network-Aware Scheduling for Data-Parallel Jobs: Plan When You Can(Corral)](http://delivery.acm.org/10.1145/2790000/2787488/p407-jalaparti.pdf) - SIGCOMM'15
+	- [Low Latency Geo-distributed Data Analytics(Iridium)](http://research.microsoft.com/en-us/um/people/ga/gda.pdf) - SIGCOMM'15
 
-###Coordinating Data and Task
-- [Delay Scheduling: A Simple Technique for Achieving Locality and Fairness in Cluster Scheduling](http://delivery.acm.org/10.1145/1760000/1755940/p265-zaharia.pdf) - EuroSys'10
-- [Network-Aware Scheduling for Data-Parallel Jobs: Plan When You Can(Corral)](http://delivery.acm.org/10.1145/2790000/2787488/p407-jalaparti.pdf) - SIGCOMM'15
-- [Low Latency Geo-distributed Data Analytics(Iridium)](http://research.microsoft.com/en-us/um/people/ga/gda.pdf) - SIGCOMM'15
-
-###Resource Assign
+###Resource Assignment
 - [Dominant Resource Fairness: Fair Allocation of Multiple Resource Types(DRF)](http://static.usenix.org/events/nsdi11/tech/full_papers/Ghodsi.pdf) - NSDI'11
 - [Performance Isolation and Fairness for Multi-Tenant Cloud Storage](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf) - OSDI'12
 - [Retro: Targeted Resource Management in Multi-tenant Distributed Systems](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-mace.pdf) - NSDI'15
