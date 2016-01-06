@@ -10,7 +10,7 @@
 
 ###Task
 - [Sparrow: Distributed, Low Latency Scheduling](http://delivery.acm.org/10.1145/2530000/2522716/p69-ousterhout.pdf) - SOSP'13
-- **Speculative tasks**
+- **Speculative Tasks**
 	- [GRASS: Trimming Stragglers in Approximation Analytics](https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-ananthanarayanan.pdf) - NSDI'11
 	- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf) - SIGCOMM'15
 - **Coordinating Data and Task**
