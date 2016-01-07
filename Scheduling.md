@@ -5,6 +5,7 @@
 
 ###Flow
 - [Coflow: A Networking Abstraction for Cluster Application](http://delivery.acm.org/10.1145/2400000/2390237/p31-chowdhury.pdf) - Hotnets'12
+- [Multi-Resource Fair Queueing for Packet Processing](http://conferences.sigcomm.org/sigcomm/2012/paper/sigcomm/p1.pdf) - SIGCOMM'12
 - [Efficient Coflow Scheduling with Varys](http://delivery.acm.org/10.1145/2630000/2626315/p443-stoica.pdf) - SIGCOMM'14
 - [Efficient Coflow Scheduling Without Prior Knowledge(Aalo)](http://delivery.acm.org/10.1145/2790000/2787480/p393-chowdhury.pdf) - SIGCOMM'15
 
