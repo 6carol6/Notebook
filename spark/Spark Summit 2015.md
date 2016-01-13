@@ -65,7 +65,7 @@
 
 这是一个training的lecture，稍微瞄一眼就好。（看半天才发现也是失误）
 
-[slide](training.databricks.com/visualapi.pdf) [video](http://livestream.com/accounts/8038169/sparksummit2015-tracka) - 第二第三个  
+[slide](http://training.databricks.com/visualapi.pdf) [video](http://livestream.com/accounts/8038169/sparksummit2015-tracka) - 第二第三个  
 
 Transformations and Actions
 
