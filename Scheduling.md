@@ -24,5 +24,9 @@
 - [Performance Isolation and Fairness for Multi-Tenant Cloud Storage(Pisces)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf) - OSDI'12
 - [Retro: Targeted Resource Management in Multi-tenant Distributed Systems](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-mace.pdf) - NSDI'15
 
+###Application Layer
+- [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
+
 [Elements of Scale: Composing and Scaling Data Platforms](http://www.benstopford.com/2015/04/28/elements-of-scale-composing-and-scaling-data-platforms/)  
 [Rack-Scale In-Memory Join Processing using RDMA](http://dl.acm.org/citation.cfm?id=2750547)
+
