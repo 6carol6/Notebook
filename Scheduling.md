@@ -28,6 +28,7 @@
 - [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
 - [Petuum: A New Platform for Distributed Machine Learning on Big Data](http://petuum.github.io/research.html) - KDD'15
 - [MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems](https://github.com/dmlc/web-data/raw/master/mxnet/paper/mxnet-learningsys.pdf) [csdn](http://blog.csdn.net/cyh_24/article/details/50545780)
+- [Rethinking Data-Intensive Science Using Scalable Analytics Systems(ADAM)](http://dl.acm.org/citation.cfm?id=2742787) Spark+Parquet - SIGMOD'15
 
 [Elements of Scale: Composing and Scaling Data Platforms](http://www.benstopford.com/2015/04/28/elements-of-scale-composing-and-scaling-data-platforms/)  
 [Rack-Scale In-Memory Join Processing using RDMA](http://dl.acm.org/citation.cfm?id=2750547)
