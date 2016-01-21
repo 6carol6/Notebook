@@ -26,6 +26,8 @@
 
 ###Application Layer
 - [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
+- [Petuum: A New Platform for Distributed Machine Learning on Big Data](http://petuum.github.io/research.html) - KDD'15
+- [MXNet: A Flexible and Efficient Machine Learning Library for Heterogeneous Distributed Systems](https://github.com/dmlc/web-data/raw/master/mxnet/paper/mxnet-learningsys.pdf)
 
 [Elements of Scale: Composing and Scaling Data Platforms](http://www.benstopford.com/2015/04/28/elements-of-scale-composing-and-scaling-data-platforms/)  
 [Rack-Scale In-Memory Join Processing using RDMA](http://dl.acm.org/citation.cfm?id=2750547)
