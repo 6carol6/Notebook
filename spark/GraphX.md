@@ -15,7 +15,8 @@ def Scatter(v, j) = PR(v) / NumLinks(v)
 ```
 这样做的好处是:
 
-    The GAS decomposition leads to a pull-based model of message computation: the system asks the vertex program for value of the message between adjacent vertices rather than the user sending messages directly from the vertex program
+    The GAS decomposition leads to a pull-based model of message computation: the system asks the vertex program for 
+    value of the message between adjacent vertices rather than the user sending messages directly from the vertex program
 
 因此就能够支持vertex-cut partitioning还能提高负载均衡(原文是improve work balance但是这是什么道理)，serial edge-iteration, and reduced data movement（不懂为什么啊）。vertex-cut就是把点切开为两个副本保留，好处是不用有边就传输数据，只需要更新点的副本，缺点就是要同步啦。如图所示：
 ![Edge-Cut and Vertex-Cut](http://i766.photobucket.com/albums/xx304/mszxw999/blog/QQ20160224101824.png)
