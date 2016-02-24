@@ -4,7 +4,7 @@
 
 - **The GAS Decomposition**: 一般的vertex programs都可以被分成Gather, Apply, Scatter三个步骤。比如以下这个PageRank的程序：
 
-```
+```scala
 def Gather(a: Double, b: Double) = a+b
 def Apply(v, msgSum) {
     PR(v) = 0.15 + 0.85 * msgSum
