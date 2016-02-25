@@ -26,11 +26,15 @@ def Scatter(v, j) = PR(v) / NumLinks(v)
 但是GAS Decomposition会造成一些额外的开销，导致一些没有边的节点也会有通信。
 
 ####1.2 Graph Partitioning
-这里用的方法是[2]里的方法。大概思想就是每次找图的最大匹配，然后把匹配的点压缩成一个点，以此类推直到只剩ck个点，其中k是最终partition的个数，c是一个可调参数。
+这里用的方法是[2]里的方法。分为三个步骤：1) Coarsening phase; 2) Partitioning phase; 3) Uncoarsening phase.
+
+Coarsening phase的大概思想就是每次找图的最大匹配，然后把匹配的点压缩成一个点，以此类推直到只剩ck个点，其中k是最终partition的个数，c是一个可调参数。
 
 ![](http://i766.photobucket.com/albums/xx304/mszxw999/blog/QQ20160224171010.png)
 
-到了partition的时候，作者用了[3]中的方法。（这篇paper也是[2]的作者发的，是厉害啊）
+到了partitioning phase的时候，作者用了[3]中的方法。（这篇paper也是[2]的作者发的，也是参考了别人的方法）方法有三种，其中一种是从一个被压缩过的节点开始，向周围扩散直到权重等于|V|/k，以此类推。其他方法都差不多，就不多说了。
+
+到了Uncorsening phase的时候，再把刚才的图拆开回来。
 
 ####1.3 Mirror Vertices
 
@@ -42,7 +46,25 @@ def Scatter(v, j) = PR(v) / NumLinks(v)
 
 ###2 Optimizations to mrTriplets
 
+####2.1 Filtered index scanning
+
+
+
+####2.2 Automatic join elimination
+
 ###3 Additional Optimizations
+
+####3.1 Memory-based shuffle
+
+spark原生的shuffle是要写文件到本地然后传输的。这里改成了把数据直接放在内存里。当数据超时了再从内存里删掉。
+
+####3.2 Batching and columnar structure
+
+shuffle的时候不要一个节点一个节点传输，一次传输所有到目标机器的节点的数据。把block从row-oriented format转化成column-oriented format。还用了LZF compression压缩数据减少发送的数据量。
+
+####3.3 Variable integer encoding
+
+定点的ID在GraphX中表示为64位整数，但是在大多数情况下ID并没有那么长，所以在shuffle的时候会对ID进行编码成7bits的值，用最高位表示是否还需要第二个byte。这个优化使得PageRank中需要传输的数据量减少了20%。
 
 ###4 References
 [1] [GraphX](http://dl.acm.org/citation.cfm?id=2484427)  
