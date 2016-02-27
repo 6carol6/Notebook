@@ -7,7 +7,7 @@
  
  ![Edge-Cut and Vertex-Cut](http://i766.photobucket.com/albums/xx304/mszxw999/blog/QQ20160224101824.png)
  
-容易看到点分割就是站在点的角度思考问题。这样的好处是不用有边就传输数据，只需要更新点的副本，缺点就是要同步啦。据说有工作研究过点分割的表现比边分割要好。GAS Decomposition也是这样，它就是把程序分为Gather, Apply, Scatter三个步骤。比如以下这个PageRank的程序：
+点分割的好处是不用有边就传输数据，只需要更新点的副本，缺点就是要同步啦。据说有工作研究过点分割的表现比边分割要好。GAS Decomposition也是这样，它就是把程序分为Gather, Apply, Scatter三个步骤。比如以下这个PageRank的程序：
 
 ```scala
 def Gather(a: Double, b: Double) = a+b
@@ -52,6 +52,8 @@ Vertex Table中的一个partition对应着Routing Table中的一个partition，R
 
 ####2.1 Filtered index scanning
 
+
+
 ####2.2 Automatic join elimination
 
 Triplet是由一个边的两个相关顶点和这个边组成的三元组，操作Triplet的map函数通常只需要访问两个邻居顶点中的一个。例如，在PageRank中，一个顶点的值的更新只与其源顶点的值有关，而与其指向目标的顶点的值无关。因此在mrTriplets的计算中，就不需要VertexRDD和EdgeRdd的3-way join，只需要2-way join。
@@ -74,5 +76,5 @@ shuffle的时候不要一个节点一个节点传输，一次传输所有到目�
 [1] [GraphX](http://dl.acm.org/citation.cfm?id=2484427)  
 [2] [Multilevelk-way Partitioning Scheme for Irregular Graphs](http://glaros.dtc.umn.edu/gkhome/fetch/papers/mlJPDC98.pdf)  
 [3] [A fast and high quality multilevel scheme for partitioning irregular graphs](http://glaros.dtc.umn.edu/gkhome/fetch/papers/mlICPP95.pdf)  
-[4] [快刀初试：Spark GraphX在淘宝的实践](http://www.csdn.net/article/2014-08-07/2821097)
+[4] [快刀初试：Spark GraphX在淘宝的实践](http://www.csdn.net/article/2014-08-07/2821097)  
 [5] [十分钟了解分布式计算:GraphX](http://doc.okbase.net/wei-li/archive/83118.html)
