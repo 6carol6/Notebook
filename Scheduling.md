@@ -34,3 +34,4 @@
 [Elements of Scale: Composing and Scaling Data Platforms](http://www.benstopford.com/2015/04/28/elements-of-scale-composing-and-scaling-data-platforms/)  
 [Rack-Scale In-Memory Join Processing using RDMA](http://dl.acm.org/citation.cfm?id=2750547)
 
+[The Power of Choice in Data-Aware Cluster Scheduling](https://www.usenix.org/conference/osdi14/technical-sessions/presentation/venkataraman) - OSDI'14
