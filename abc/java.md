@@ -47,3 +47,25 @@
 
 #Concurrent, java.util.concurrent(jdk1.5)
 
+##Executors(线程池)
+
+    ```
+    ExecutorService executor = Executors.newFixedThreadPool(3);//设置最大3个线程
+    executor.execute(new PrintChar('a',100));
+    ...
+    executor.shutdown();
+    ```
+
+##volatile
+
+1. 每次读到的都是新值
+2. 禁止被编译器优化
+
+##lock, ReentrantLock(重入锁), synchronized
+
+1. 使用synchronized，若`A`不释放，`B`会一直等下去不会被中断  
+   使用ReentrantLock，若`A`不释放，可以使`B`在等待足够长时间之后会中断等待，干别的事情（使用`tryLock()`而不是`lock()`）
+2. synchronized是JVM层面上实现的，可以被监控工具监控，在代码执行出现异常时，JVM会自动释放锁  
+   lock是通过代码实现的，要保证一定会被释放就一定要放到finally{}中
+3. 在资源竞争不是很激烈的情况下，synchronized性能优于ReetrantLock，反之synchronized性能会下降，但ReetrantLock保持性能
+
