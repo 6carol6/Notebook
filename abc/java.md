@@ -20,7 +20,7 @@
 3. `HashTable extends Dictionary implements Map, Cloneable`  
    `HashMap extends AbstractMap implements Map, Cloneable, Serializable`
 4. HashTable直接使用key的hashCode作为key，HashMap会对key的hashCode进行二次hash，不过这方面性能差异不大
-5. HashMap/HashTalbe都是链表散列结构
+5. HashMap/HashTalbe都是链表散列结构，但在java8中，如果HashMap的entry链长度超过8，就会转换成红黑树
 6. HashTable/HashMap缺省初始大小为a，载入因子为b(0<b<1)，则当元素个数超过ab时，就会重新组织内存并增加大小
 
 ###ConcurrentHashMap(jdk1.5), HashMap, HashTable
