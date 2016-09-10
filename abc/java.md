@@ -26,7 +26,7 @@
 ###ConcurrentHashMap(jdk1.5), HashMap, HashTable
 
 1. ConcurrentHashMap是线程安全的HashMap
-2. ConcurrentHashMap使用分段锁保证线程安全（区别HashTable）。ConcurrentHashMap把数据按hash(key)划分成不同的分段(Segement)，每一个分段就相当于一个HashTable，以保证同步。
+2. ConcurrentHashMap使用分段锁保证线程安全（区别HashTable）。ConcurrentHashMap把数据按hash(key)划分成不同的分段(Segement)，每一个Segement继承自ReentrantLock，以保证同步。
 3. 若需要跨段操作，比如size(), containsValue()，则需要按顺序锁定所有Segment
 
 ###LinkedHashMap(LinkedHashMapEntry)
