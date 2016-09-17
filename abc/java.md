@@ -45,6 +45,12 @@
 
 1. HashSet是HashMap实现的，TreeSet是TreeMap实现的，而TreeMap是红黑树
 
+###抽象类和接口
+
+1. 可以实现多个接口，抽象类只能被单继承
+2. 接口中定义的方法不能实现，抽象类可以实现部分方法
+3. 接口中的数据成员默认是`public static final`的，方法默认是`public abstract`的，interface只能被`public`,`abstract`修饰
+
 #Concurrent, java.util.concurrent(jdk1.5)
 
 ##Executors(线程池)
@@ -69,3 +75,34 @@
    lock是通过代码实现的，要保证一定会被释放就一定要放到finally{}中
 3. 在资源竞争不是很激烈的情况下，synchronized性能优于ReetrantLock，反之synchronized性能会下降，但ReetrantLock保持性能
 
+#JVM
+
+##Java内存分配
+
+- 线程共享
+    1. 方法区
+    2. 堆区
+- 线程隔离
+    3. 程序计数器（PC）
+    4. 虚拟机栈
+    5. 本地方法栈
+    
+###堆区分配
+
+在虚拟机遇到`new`指令后，会把相应类加载到方法区，然后为新生对象在堆区分配内存。
+1. 对象头（长度必须是8N，否则补齐）：
+    - Mark Word: HashCode，GC分代年龄，锁状态标志，线程持有锁，偏向线程ID，偏向时间戳
+    - 类型指针
+    - 若是Java数组还要记录长度
+2. 实例数据
+3. 对齐填充（由于对象的起始地址必须是8的整数倍）
+
+分配方式（取决于GC方式）：
+- 指针碰撞（Serial, ParNew, 带Compact的收集器）
+- 空闲列表（CMS，基于标记清楚的收集器）
+
+对象分配的同步处理（保证不会申请到同一块空间）：
+- CAS（Compare and Swap，CPU支持的对内存中共享数据进行操作的特殊指令）+ 失败重试
+- 本地线程分配缓冲TLAB（可设置）
+
+对象分配完成之后会把除对象头之外分配空间置为0，然后设置对象头
