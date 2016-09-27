@@ -80,7 +80,7 @@ pINT2 a,b; //相当于int*a,b;
 1. typeid
 2. dynamic_cast
 
-##智能指针
+## 智能指针
 
 
 ## 动态链接库
