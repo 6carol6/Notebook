@@ -46,8 +46,6 @@ pINT2 a,b; //相当于int*a,b;
     - 对象的析构：``` ptask->~Task();```
     - 释放：```delete[] buf```
 
-## 智能指针
-
 ## 程序空间
 
 1. text段：程序代码，编译时确定，只读
@@ -80,16 +78,25 @@ pINT2 a,b; //相当于int*a,b;
 1. typeid
 2. dynamic_cast
 
-## 智能指针
-
-
 ## 动态链接库
 
 ### 查看可执行文件链接了哪些动态库
+
 ldd
 
 ## C++11
 
+###左值和右值的区别
+
 ### 右值引用和转发型引用
 
 ### 移动构造函数
+
+### 智能指针
+
+- shared_ptr：允许多个指针指向同一个对象
+    ```
+        shared_ptr<int> p(new int(1024));//不可以写shared_ptr<int> p = new int(1024)，因为构造函数是explicit的
+    ```
+- unique_ptr：独占所指向的对象
+- weak_ptr：弱引用，指向shared_ptr所管理的对象
