@@ -23,6 +23,9 @@
 - [Dominant Resource Fairness: Fair Allocation of Multiple Resource Types(DRF)](http://static.usenix.org/events/nsdi11/tech/full_papers/Ghodsi.pdf) - NSDI'11
 - [Performance Isolation and Fairness for Multi-Tenant Cloud Storage(Pisces)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf) - OSDI'12
 - [Retro: Targeted Resource Management in Multi-tenant Distributed Systems](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-mace.pdf) - NSDI'15
+- [Multi-resource packing for cluster schedulers(Tetris)](http://dl.acm.org/citation.cfm?id=2626334) - SIGCOMM'14
+- [Altruistic Scheduling in Multi-Resource Clusters
+](http://www.mosharaf.com/wp-content/uploads/carbyne-osdi16.pdf) - OSDI'16
 
 ###Application Layer
 - [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
