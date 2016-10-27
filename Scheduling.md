@@ -15,6 +15,7 @@ Scheduling COflows in the DArk](http://dl.acm.org/citation.cfm?id=2934880) [[sli
 - [Sparrow: Distributed, Low Latency Scheduling](http://dl.acm.org/citation.cfm?doid=2517349.2522716) - SOSP'13
 - [Omega: flexible, scalable schedulers for large compute clusters
 ](http://dl.acm.org/citation.cfm?id=2465386) - EuroSys'13
+- [Job-aware Scheduling in Eagle: Divide and Stick to Your Probes](https://infoscience.epfl.ch/record/221125/files/socc2016-final189.pdf) - SoCC'16
 - **Speculative Tasks**
 	- [GRASS: Trimming Stragglers in Approximation Analytics](https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-ananthanarayanan.pdf) - NSDI'11
 	- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf) - SIGCOMM'15
