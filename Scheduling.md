@@ -26,6 +26,7 @@ Scheduling COflows in the DArk](http://dl.acm.org/citation.cfm?id=2934880) [[sli
 ###Resource Assignment
 - [Dominant Resource Fairness: Fair Allocation of Multiple Resource Types(DRF)](http://static.usenix.org/events/nsdi11/tech/full_papers/Ghodsi.pdf) - NSDI'11
 - [Performance Isolation and Fairness for Multi-Tenant Cloud Storage(Pisces)](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf) - OSDI'12
+- [HASTE: Hadoop YARN Scheduling Based on Task-Dependency and Resource-Demand](http://www.cs.umb.edu/~shengbo/paper/cloud14a.pdf) - Cloud'14
 - [Retro: Targeted Resource Management in Multi-tenant Distributed Systems](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-mace.pdf) - NSDI'15
 - [Multi-resource packing for cluster schedulers(Tetris)](http://dl.acm.org/citation.cfm?id=2626334) - SIGCOMM'14
 - [Altruistic Scheduling in Multi-Resource Clusters
