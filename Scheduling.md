@@ -9,7 +9,7 @@
 - [Efficient Coflow Scheduling with Varys](http://conferences.sigcomm.org/sigcomm/2014/doc/slides/83.pdf) - SIGCOMM'14
 - [Efficient Coflow Scheduling Without Prior Knowledge(Aalo)](http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p393.pdf) - SIGCOMM'15
 - [CODA: Toward Automatically Identifying and
-Scheduling COflows in the DArk](http://dl.acm.org/citation.cfm?id=2934880) [slide](http://conferences.sigcomm.org/sigcomm/2016/files/program/sigcomm/Session04-Paper02-CODA-Hong-Slides.pdf) - SIGCOMM'16
+Scheduling COflows in the DArk](http://dl.acm.org/citation.cfm?id=2934880) [[slide]](http://conferences.sigcomm.org/sigcomm/2016/files/program/sigcomm/Session04-Paper02-CODA-Hong-Slides.pdf) - SIGCOMM'16
 
 ###Task
 - [Sparrow: Distributed, Low Latency Scheduling](http://dl.acm.org/citation.cfm?doid=2517349.2522716) - SOSP'13
