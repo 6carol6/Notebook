@@ -11,6 +11,8 @@
 
 ###Task
 - [Sparrow: Distributed, Low Latency Scheduling](http://dl.acm.org/citation.cfm?doid=2517349.2522716) - SOSP'13
+- [Omega: flexible, scalable schedulers for large compute clusters
+](http://dl.acm.org/citation.cfm?id=2465386) - EuroSys'13
 - **Speculative Tasks**
 	- [GRASS: Trimming Stragglers in Approximation Analytics](https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-ananthanarayanan.pdf) - NSDI'11
 	- [Hopper: Decentralized Speculation-aware Cluster Scheduling at Scale](http://users.cms.caltech.edu/~adamw/papers/hopper.pdf) - SIGCOMM'15
@@ -26,6 +28,7 @@
 - [Multi-resource packing for cluster schedulers(Tetris)](http://dl.acm.org/citation.cfm?id=2626334) - SIGCOMM'14
 - [Altruistic Scheduling in Multi-Resource Clusters
 ](http://www.mosharaf.com/wp-content/uploads/carbyne-osdi16.pdf) - OSDI'16
+- [GRAPHENE: Packing and Dependency-Aware Scheduling for Data-Parallel Clusters](https://www.usenix.org/conference/osdi16/technical-sessions/presentation/grandl_graphene) - OSDI'16
 
 ###Application Layer
 - [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
