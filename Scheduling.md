@@ -2,6 +2,7 @@
 
 ###Analyze
 - [Making Sense of Performance in Data Analytics Frameworks](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-ousterhout.pdf) - NSDI'15
+- [Scalability! But at what COST?](https://www.usenix.org/system/files/conference/hotos15/hotos15-paper-mcsherry.pdf) - hotos'15
 
 ###Coflow
 - [Coflow: A Networking Abstraction for Cluster Application](http://conferences.sigcomm.org/hotnets/2012/papers/hotnets12-final51.pdf) - Hotnets'12
