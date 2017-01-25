@@ -11,7 +11,7 @@ class HierarchicalAllocatorProcess:public MesosAllocatorProcess{
         // 常规(regular)和过多订购(oversubscribed)的资源总量
         Reources total;
 
-        // 唱过和过多订购的已经被分配的资源
+        // 常规和过多订购的已经被分配的资源
         // 虽然sorter中也记录了这个信息，但是如果一些framework没有重新注册，
         // sorter中的这个信息不准确
         Resources allocated;
