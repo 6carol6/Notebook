@@ -146,5 +146,97 @@ void HierarchicalAllocatorProcess::allocate(
 
     Resources allocatedStage2;
 
-    
+    // 这个时候给quotas的资源都已经被allocated或者accounted了
+    foreach (const SlaveID& slaveId, slaveIds){
+        // 如果资源不够用在第二个stage，就停了
+        if (!allocatable(remainingClusterResources - allocatedStage2))
+            break;
+        
+        foreach (const string& role, roleSorter->sort()){
+            // NOTE: Suppressed（被抑制的）framework不会参与排序
+            foreach (const string& frameworkId_,
+                    frameworkSorters[role]->sort()){
+                FrameworkID frameworkId;
+                frameworkId.set_value(frameworkId_);
+
+                // 又是GPU
+                if (!frameworks[frameworkId].gpuAware &&
+                    slaves[slaveId].total.gpus().getOrElse(0) > 0)
+                    continue;
+                
+                // 计算现在slave上还有的资源
+                Resources available =
+                    (slaves[slaveId].total - slaves[slaveId].allocated).nonShared();
+                
+                // 如果这个资源在这个offer cycle还没有被分配，就offer a shared resources
+                if (frameworks[frameworkId].shared) {
+                    available += slaves[slaveId].total.shared();
+                    if (offeredSharedResources.contains(slaveId)) {
+                        available -= offeredSharedResources[slaveId];
+                    }
+                }
+
+                //
+                Resources resources = available.reserved(role);
+                if (!quotas.contains(role)) {
+                    resources += available.unreserved();
+                }
+
+                if (!allocatable(resources)) {
+                    break;
+                }
+
+                if (!frameworks[frameworkId].revocable) {
+                    resources = resources.nonRevocable();
+                }
+
+                if (!allocatable(resources)) continue;
+
+                if (isFiltered(frameworkId, slaveId, resources)) continue;
+
+                const Resources scalarQuantity =
+                resources.nonShared().createStrippedScalarQuantity();
+
+                if (!remainingClusterResources.contains(
+                        allocatedStage2 + scalarQuantity)) {
+                continue;
+                }
+
+                VLOG(2) << "Allocating " << resources << " on agent " << slaveId
+                        << " to framework " << frameworkId;
+                
+                offerable[frameworkId][slaveId] += resources;
+                offeredSharedResources[slaveId] += resources.shared();
+                allocatedStage2 += scalarQuantity;
+
+                slaves[slaveId].allocated += resources;
+
+                frameworkSorters[role]->add(slaveId, resources);
+                frameworkSorters[role]->allocated(frameworkId_, slaveId, resources);
+                roleSorter->allocated(role, slaveId, resources);
+
+                if (quotas.contains(role)) {
+                // See comment at `quotaRoleSorter` declaration regarding
+                // non-revocable.
+                quotaRoleSorter->allocated(role, slaveId, resources.nonRevocable());
+                }
+
+            }
+        }
+    }
+
+    if (offerable.empty()) {
+        VLOG(1) << "No allocations performed";
+    } else {
+        // Now offer the resources to each framework.
+        foreachkey (const FrameworkID& frameworkId, offerable) {
+        offerCallback(frameworkId, offerable[frameworkId]);
+        }
+    }
+
+    // NOTE: For now, we implement maintenance inverse offers within the
+    // allocator. We leverage the existing timer/cycle of offers to also do any
+    // "deallocation" (inverse offers) necessary to satisfy maintenance needs.
+    deallocate(slaveIds_);
+
 }
