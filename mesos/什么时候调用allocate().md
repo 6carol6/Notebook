@@ -12,3 +12,7 @@
 
 这些函数是master接收到相应消息之后在master.cpp的函数中被调用的
 
+###消息是谁发出来的？
+
+应该是framework的RPC吧。
+

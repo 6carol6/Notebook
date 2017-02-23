@@ -35,6 +35,12 @@ Scheduling COflows in the DArk](http://dl.acm.org/citation.cfm?id=2934880) [[sli
 ](http://www.mosharaf.com/wp-content/uploads/carbyne-osdi16.pdf) - OSDI'16
 - [GRAPHENE: Packing and Dependency-Aware Scheduling for Data-Parallel Clusters](http://pages.cs.wisc.edu/~akella/papers/graphene.pdf) - OSDI'16
 
+###Architecture
+- [Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center](http://static.usenix.org/events/nsdi11/tech/full_papers/Hindman_new.pdf) - NSDI'11
+- [Omega: flexible, scalable schedulers for large compute clusters
+](http://128.232.0.20/research/srg/netos/papers/2013-omega.pdf) - EuroSys'13
+- [Apache Hadoop YARN: yet another resource negotiator](http://web.eecs.umich.edu/~mosharaf/Readings/YARN.pdf) - SOCC'13
+
 ###Application Layer
 - [GraphX: a resilient distributed graph system on Spark](http://dl.acm.org/citation.cfm?id=2484427) - GRADES '13
 - [Petuum: A New Platform for Distributed Machine Learning on Big Data](http://petuum.github.io/research.html) - KDD'15
