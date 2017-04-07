@@ -1,4 +1,4 @@
-###ExecutorAllocationManager.scala
+### ExecutorAllocationManager.scala
 
 在`SparkContext`里会调用这个类的`start()`
 
@@ -54,3 +54,7 @@
     }
   }
 ```
+
+`updateAndSyncNumExecutorsTarget(now)`里调用`addExecutors()`，这里是每次翻倍申请Executor的地方。
+
+然后回到最上面的`start()`，有一个`Runnable()`什么时候`run()`呢，猜一下跟`listener`有关。
