@@ -2,8 +2,7 @@
 
 在`SparkContext`里会调用这个类的`start()`
 
-```
-    /**
+```/**
     * Register for scheduler callbacks to decide when to add and remove executors, and start
     * the scheduling task.
     */
@@ -31,7 +30,7 @@
 `schedule()`在这里
 
 
-  /**
+```  /**
    * This is called at a fixed interval to regulate the number of pending executor requests
    * and number of executors running.
    *
@@ -54,4 +53,4 @@
       !expired
     }
   }
-    
+```
