@@ -67,16 +67,26 @@
     ThreadUtils.newDaemonSingleThreadScheduledExecutor("spark-dynamic-executor-allocation")
 ```
 
-### util/ThreadUtils.scala
+> ### util/ThreadUtils.scala
+> 
+> ```
+>   /**
+>    * Wrapper over newSingleThreadExecutor.
+>    */
+>   def newDaemonSingleThreadExecutor(threadName: String): ExecutorService = {
+>     val threadFactory = new ThreadFactoryBuilder().setDaemon(true).setNameFormat(threadName).build()
+>     Executors.newSingleThreadExecutor(threadFactory)
+>   }
+> ```
+> 
+> 这应该是一个工厂模式，返回了一个`ExecutorService`。所以`executor.scheduleAtFixedRate(scheduleTask, 0, intervalMillis, TimeUnit.MILLISECONDS)`应该可以被理解为每隔`intervalMillis`时间就被调用一下啦。
 
 ```
-  /**
-   * Wrapper over newSingleThreadExecutor.
-   */
-  def newDaemonSingleThreadExecutor(threadName: String): ExecutorService = {
-    val threadFactory = new ThreadFactoryBuilder().setDaemon(true).setNameFormat(threadName).build()
-    Executors.newSingleThreadExecutor(threadFactory)
-  }
+  // Polling loop interval (ms)
+  private val intervalMillis: Long = 100
 ```
 
-这应该是一个工厂模式，返回了一个`ExecutorService`。所以`executor.scheduleAtFixedRate(scheduleTask, 0, intervalMillis, TimeUnit.MILLISECONDS)`应该可以被理解为每隔`intervalMillis`时间就被调用一下啦。
+这个时间间隔被定义为了100ms。
+
+我们现在知道了申请Executor的函数会每隔100ms被调用一次，那么这个函数做了什么呢？
+
