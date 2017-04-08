@@ -90,3 +90,5 @@
 
 我们现在知道了申请Executor的函数会每隔100ms被调用一次，那么这个函数做了什么呢？
 
+如果还有task在排队，并且还没有被调度，就要`addExecutors(maxNeeded)`，这里的`maxNeeded`取(task的总个数/每个task需要的Executor的个数)上取整。
+
