@@ -46,6 +46,8 @@
 
     updateAndSyncNumExecutorsTarget(now)
 
+    // 这里的removeTimes是一个HashMap[String, Long]（<ExecutorId, expireTime>）
+    // 超时未被占用，移除Executor
     removeTimes.retain { case (executorId, expireTime) =>
       val expired = now >= expireTime
       if (expired) {
@@ -96,9 +98,19 @@
 
 ```
   // Lower and upper bounds on the number of executors.
-  private val minNumExecutors = conf.get(DYN_ALLOCATION_MIN_EXECUTORS) //最小的Executor数量，默认为0
-  private val maxNumExecutors = conf.get(DYN_ALLOCATION_MAX_EXECUTORS) //最大的Executor数量，默认为Int.MaxValue
-  private val initialNumExecutors = Utils.getDynamicAllocationInitialExecutors(conf) //初始请求Executor数量，为max{DYN_ALLOCATION_MIN_EXECUTORS，DYN_ALLOCATION_INITIAL_EXECUTORS(默认为DYN_ALLOCATION_MIN_EXECUTORS)，EXECUTOR_INSTANCES(默认为0)}
+  //最小的Executor数量，默认为0
+  private val minNumExecutors = conf.get(DYN_ALLOCATION_MIN_EXECUTORS) 
+  //最大的Executor数量，默认为Int.MaxValue
+  private val maxNumExecutors = conf.get(DYN_ALLOCATION_MAX_EXECUTORS) 
+  //初始请求Executor数量，为max{DYN_ALLOCATION_MIN_EXECUTORS，DYN_ALLOCATION_INITIAL_EXECUTORS(默认为DYN_ALLOCATION_MIN_EXECUTORS)，EXECUTOR_INSTANCES(默认为0)}
+  private val initialNumExecutors = Utils.getDynamicAllocationInitialExecutors(conf) 
+
+  // The desired number of executors at this moment in time. If all our executors were to die, this
+  // is the number of executors we would immediately want from the cluster manager.
+  private var numExecutorsTarget = initialNumExecutors
+
+  // Number of executors to add in the next round
+  private var numExecutorsToAdd = 1
 ```
 
 > ### internal/package.scala
@@ -144,3 +156,71 @@
 >  }
 > ```
 >
+
+```
+  /**
+   * Request a number of executors from the cluster manager.
+   * If the cap on the number of executors is reached, give up and reset the
+   * number of executors to add next round instead of continuing to double it.
+   *
+   * @param maxNumExecutorsNeeded the maximum number of executors all currently running or pending
+   *                              tasks could fill
+   * @return the number of additional executors actually requested.
+   */
+  // 这里的参数maxNumExecutorNeeded = ceil(pending的task个数/每个task需要的Executor个数)
+  private def addExecutors(maxNumExecutorsNeeded: Int): Int = {
+    // Do not request more executors if it would put our target over the upper bound
+    if (numExecutorsTarget >= maxNumExecutors) {
+      logDebug(s"Not adding executors because our current target total " +
+        s"is already $numExecutorsTarget (limit $maxNumExecutors)")
+      numExecutorsToAdd = 1
+      return 0
+    }
+
+    val oldNumExecutorsTarget = numExecutorsTarget
+    // There's no point in wasting time ramping up to the number of executors we already have, so
+    // make sure our target is at least as much as our current allocation:
+    numExecutorsTarget = math.max(numExecutorsTarget, executorIds.size)
+    // Boost our target with the number to add for this round:
+    numExecutorsTarget += numExecutorsToAdd
+    // Ensure that our target doesn't exceed what we need at the present moment:
+    // 保证请求不会超过现在pending的task所需要的Executor的个数
+    numExecutorsTarget = math.min(numExecutorsTarget, maxNumExecutorsNeeded)
+    // Ensure that our target fits within configured bounds:
+    // 保证不会超过设置最大的个数，不会小于设置最小的个数
+    numExecutorsTarget = math.max(math.min(numExecutorsTarget, maxNumExecutors), minNumExecutors)
+
+    // 现在需要的和上一把需要的差值（这一把多加了numExecutorsToAdd），
+    // 也就是这一把需要多申请delta个Executor
+    val delta = numExecutorsTarget - oldNumExecutorsTarget
+
+    // If our target has not changed, do not send a message
+    // to the cluster manager and reset our exponential growth
+    if (delta == 0) {
+      numExecutorsToAdd = 1
+      return 0
+    }
+
+    // 这里的client是SparkContext.this
+    val addRequestAcknowledged = testing ||
+      client.requestTotalExecutors(numExecutorsTarget, localityAwareTasks, hostToLocalTaskCount)
+    if (addRequestAcknowledged) {
+      val executorsString = "executor" + { if (delta > 1) "s" else "" }
+      logInfo(s"Requesting $delta new $executorsString because tasks are backlogged" +
+        s" (new desired total will be $numExecutorsTarget)")
+      numExecutorsToAdd = if (delta == numExecutorsToAdd) {
+        numExecutorsToAdd * 2
+      } else {
+        1
+      }
+      delta
+    } else {
+      logWarning(
+        s"Unable to reach the cluster manager to request $numExecutorsTarget total executors!")
+      numExecutorsTarget = oldNumExecutorsTarget
+      0
+    }
+  }
+```
+
+> SparkContext.scala
