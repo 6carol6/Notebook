@@ -294,5 +294,4 @@
 
 ```
 
-所以这整个过程就是在更新`executorLimitOption`，等到mesos主动offer资源的时候，可以用到这个值。
-
+所以这整个过程就是在更新`executorLimitOption`，等到mesos主动offer资源的时候，可以用到这个值来判断offer的资源够不够用。
