@@ -223,4 +223,76 @@
   }
 ```
 
-> SparkContext.scala
+> ### SparkContext.scala
+> 
+> ```
+>   /**
+>   * Update the cluster manager on our scheduling needs. Three bits of information are included
+>   * to help it make decisions.
+>   * @param numExecutors The total number of executors we'd like to have. The cluster manager
+>   *                     shouldn't kill any running executor to reach this number, but,
+>   *                     if all existing executors were to die, this is the number of executors
+>   *                     we'd want to be allocated.
+>   * @param localityAwareTasks The number of tasks in all active stages that have a locality
+>   *                           preferences. This includes running, pending, and completed tasks.
+>   * @param hostToLocalTaskCount A map of hosts to the number of tasks from all active stages
+>   *                             that would like to like to run on that host.
+>   *                             This includes running, pending, and completed tasks.
+>   * @return whether the request is acknowledged by the cluster manager.
+>   */
+>  private[spark] override def requestTotalExecutors(
+>      numExecutors: Int,
+>      localityAwareTasks: Int,
+>      hostToLocalTaskCount: scala.collection.immutable.Map[String, Int]
+>    ): Boolean = {
+>    schedulerBackend match {
+>      // 所以就是去调用CoarseGrainedSchedulerBackend.requestTotalExecutors
+>      case b: CoarseGrainedSchedulerBackend =>
+>        b.requestTotalExecutors(numExecutors, localityAwareTasks, hostToLocalTaskCount)
+>      case _ =>
+>        logWarning("Requesting executors is only supported in coarse-grained mode")
+>        false
+>    }
+>  }
+> ```
+> 
+
+### scheduler/cluster/CoarseGrainedSchedulerBackend.scala
+
+```
+  final override def requestTotalExecutors(
+      numExecutors: Int,  // 表示当前一共要多少Executor（包括已经申请的吧）
+      localityAwareTasks: Int,
+      hostToLocalTaskCount: Map[String, Int]
+    ): Boolean = synchronized {
+    if (numExecutors < 0) {
+      throw new IllegalArgumentException(
+        "Attempted to request a negative number of executor(s) " +
+          s"$numExecutors from the cluster manager. Please specify a positive number!")
+    }
+
+    this.localityAwareTasks = localityAwareTasks
+    this.hostToLocalTaskCount = hostToLocalTaskCount
+
+    numPendingExecutors =
+      math.max(numExecutors - numExistingExecutors + executorsPendingToRemove.size, 0)
+    // 调用子类函数
+    doRequestTotalExecutors(numExecutors)
+  }
+```
+
+### scheduler/cluster/mesos/MesosCoarseGrainedSchedulerBackend.scala
+
+```
+  override def doRequestTotalExecutors(requestedTotal: Int): Boolean = {
+    // We don't truly know if we can fulfill the full amount of executors
+    // since at coarse grain it depends on the amount of slaves available.
+    logInfo("Capping the total amount of executors to " + requestedTotal)
+    executorLimitOption = Some(requestedTotal)
+    true
+  }
+
+```
+
+所以这整个过程就是在更新`executorLimitOption`，等到mesos主动offer资源的时候，可以用到这个值。
+
