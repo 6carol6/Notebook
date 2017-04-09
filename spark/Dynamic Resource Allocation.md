@@ -92,3 +92,55 @@
 
 如果还有task在排队，并且还没有被调度，就要`addExecutors(maxNeeded)`，这里的`maxNeeded`取(task的总个数/每个task需要的Executor的个数)上取整。
 
+先看一些默认值表示什么意思，值是多少。
+
+```
+  // Lower and upper bounds on the number of executors.
+  private val minNumExecutors = conf.get(DYN_ALLOCATION_MIN_EXECUTORS) //最小的Executor数量，默认为0
+  private val maxNumExecutors = conf.get(DYN_ALLOCATION_MAX_EXECUTORS) //最大的Executor数量，默认为Int.MaxValue
+  private val initialNumExecutors = Utils.getDynamicAllocationInitialExecutors(conf) //初始请求Executor数量，为max{DYN_ALLOCATION_MIN_EXECUTORS，DYN_ALLOCATION_INITIAL_EXECUTORS(默认为DYN_ALLOCATION_MIN_EXECUTORS)，EXECUTOR_INSTANCES(默认为0)}
+```
+
+> ### internal/package.scala
+> 
+> ```
+>   private[spark] val DYN_ALLOCATION_MIN_EXECUTORS =
+>    ConfigBuilder("spark.dynamicAllocation.minExecutors").intConf.createWithDefault(0)
+>   private[spark] val DYN_ALLOCATION_MAX_EXECUTORS =
+>    ConfigBuilder("spark.dynamicAllocation.maxExecutors").intConf.createWithDefault(Int.MaxValue)
+>   private[spark] val DYN_ALLOCATION_INITIAL_EXECUTORS =
+>    ConfigBuilder("spark.dynamicAllocation.initialExecutors")
+>      .fallbackConf(DYN_ALLOCATION_MIN_EXECUTORS)
+> ```
+> 
+> ### util/Utils.scala
+> 
+> ```
+>   /**
+>   * Return the initial number of executors for dynamic allocation.
+>   */
+>  def getDynamicAllocationInitialExecutors(conf: SparkConf): Int = {
+>    if (conf.get(DYN_ALLOCATION_INITIAL_EXECUTORS) < conf.get(DYN_ALLOCATION_MIN_EXECUTORS)) {
+>      logWarning(s"${DYN_ALLOCATION_INITIAL_EXECUTORS.key} less than " +
+>        s"${DYN_ALLOCATION_MIN_EXECUTORS.key} is invalid, ignoring its setting, " +
+>          "please update your configs.")
+>    }
+>
+>    if (conf.get(EXECUTOR_INSTANCES).getOrElse(0) < conf.get(DYN_ALLOCATION_MIN_EXECUTORS)) {
+>      logWarning(s"${EXECUTOR_INSTANCES.key} less than " +
+>        s"${DYN_ALLOCATION_MIN_EXECUTORS.key} is invalid, ignoring its setting, " +
+>          "please update your configs.")
+>    }
+>
+>    val initialExecutors = Seq(
+>      conf.get(DYN_ALLOCATION_MIN_EXECUTORS),
+>      conf.get(DYN_ALLOCATION_INITIAL_EXECUTORS),
+>      conf.get(EXECUTOR_INSTANCES).getOrElse(0)).max
+>
+>    logInfo(s"Using initial executors = $initialExecutors, max of " +
+>      s"${DYN_ALLOCATION_INITIAL_EXECUTORS.key}, ${DYN_ALLOCATION_MIN_EXECUTORS.key} and " +
+>        s"${EXECUTOR_INSTANCES.key}")
+>    initialExecutors
+>  }
+> ```
+>
