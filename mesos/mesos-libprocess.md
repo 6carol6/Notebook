@@ -6,4 +6,4 @@
 
 ### ╡н©╪ндов
 
-[1] (http://dongxicheng.org/apache-mesos/mesos-libprocess/)[http://dongxicheng.org/apache-mesos/mesos-libprocess/]  
+[1] [http://dongxicheng.org/apache-mesos/mesos-libprocess/](http://dongxicheng.org/apache-mesos/mesos-libprocess/)
