@@ -294,4 +294,4 @@
 
 ```
 
-所以这整个过程就是在更新`executorLimitOption`，等到mesos主动offer资源的时候，可以用到这个值作为上届，来bound住Launch的task的个数。
+所以这整个过程就是在更新`executorLimitOption`，等到mesos主动offer资源的时候，可以用到这个值作为上界，来bound住Launch的task的个数。

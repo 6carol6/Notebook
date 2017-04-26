@@ -76,7 +76,8 @@ void HierarchicalAllocatorProcess::allocate(
                 // 计算每个slave上现有的资源
                 Resources available = (slaves[slaveId].total - slaves[slaveId].allocated).nonShared();
 
-                // 如果a shared 资源还没有在这个offer cycle提供给一个framework，就offer它
+                //  一个framework支持使用shared资源，就把slave上的可share资源也算在available之中，
+				// 注意要去掉那些已经被分配的资源
                 if (frameworks[frameworkId].shared){
                     available += slaves[slaveId].total.shared();
                     if (offeredSharedResources.contains(slaveId))
@@ -87,9 +88,7 @@ void HierarchicalAllocatorProcess::allocate(
                 Resources resources = 
                     (available.unreserved() + available.reserved(role)).nonRevocable();
                 
-                // 所有同一个Role下的framework都会考虑相同的资源，
-                // 在这种情况下，我们就没有可放置的资源了
-                // 对于同一个role下的其他framework就不用再考虑了，直接break掉
+                // 判断要不要放置，只要resources.cpu>0.01个（其实就是有1个CPU就行），而且resources.mem > 32MB就可以
                 if (!allocatable(resources)) break;
                 
                 if (isFiltered(frameworkId, slaveId, resources))
