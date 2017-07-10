@@ -34,3 +34,17 @@ Canvas是用来控制一组UI元素渲染方式的组件。所有UI元素必须�
 - 当UI元素在global空间编辑时，矩形和操作点全局对齐
 - pivot定义了UI元素的轴心，(1, 1)表示右上角，(0, 0)表示左下角
 - 调整大小（width和height）的时候不会影响字体的大小，但缩放（scale）会
+
+## 3 Button
+
+Button元素可以检测用户输入并触发一个事件。
+
+- 需要一个Image脚本和一个Button脚本
+- Interactable可以控制按钮是否接受输入，为false时，按钮不能点。
+- 一个按钮有normal, highlighted, pressed, disable四种状态，可以通过Transition来控制。
+	- None: 表示四种状态下按钮的形态无变化，无视觉反馈，一直表现为normal
+	- ColorTint: 每个状态使用同一个图像元素。其中Target Graphic设置为button元素上的image组件。Color Multiplier会把每个状态的调色乘以这个值。用于设置在增亮图像上基色小于白色的颜色，或者设置小于全透明的alpha通道。Fade Duration指两个状态间的过渡时间（秒）
+	- SpriteSwap: 在不同状态使用不同的sprite。
+	- Animation: 允许每个转变通过Unity的动画系统进行完全动画化
+	- 
+
