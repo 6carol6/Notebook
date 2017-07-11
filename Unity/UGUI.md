@@ -1,3 +1,5 @@
+http://www.bilibili.com/video/av3539342/
+
 # 1 Canvas
 
 Canvas是用来控制一组UI元素渲染方式的组件。所有UI元素必须是Canvas的孩子。每个Canvas都有几种不同的渲染模式（render modes）。一个场景中可以有多个Canvas。
@@ -66,4 +68,11 @@ image组件用来给UI元素在屏幕内提供实际的图像存在效果。可�
 ## 5 text
 
 用于在UI内渲染文字。
+
+## 6 UI事件及触发器
+
+创建canvas时，会添加一个EventSystem，和至少一个Input module组件。场景开始时，event system组件会寻找同一个游戏对象上的input module，并利用其定义每个UI元素对输入的响应。
+
+## 7 Slider滑动条
+
 
