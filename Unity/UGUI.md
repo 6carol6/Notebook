@@ -46,5 +46,24 @@ Button元素可以检测用户输入并触发一个事件。
 	- ColorTint: 每个状态使用同一个图像元素。其中Target Graphic设置为button元素上的image组件。Color Multiplier会把每个状态的调色乘以这个值。用于设置在增亮图像上基色小于白色的颜色，或者设置小于全透明的alpha通道。Fade Duration指两个状态间的过渡时间（秒）
 	- SpriteSwap: 在不同状态使用不同的sprite。
 	- Animation: 允许每个转变通过Unity的动画系统进行完全动画化
-	- 
+- Navigation描述使用键盘或控制时，选择UI元素的处理方式，Automatic就好
+- 事件：
+	- 创建canvas时，会添加一个EventSystem用于捕捉事件，可以处理按钮的点击，OnClick函数需要写在一个类里在OnClick选框被设置，可以有一个参数。
+
+## 4 image组件
+
+image组件用来给UI元素在屏幕内提供实际的图像存在效果。可以有按钮、面板、滑动条等几乎所有UI的背景。
+
+- Source Image: 不选就只有颜色
+- Color: 控制UI的颜色
+- Material: 一般可以为空
+- Image Type: 影响源图像的使用方式
+	- Simpley: sprite会拉伸来满足rect transform的大小。 Preserve Aspect选项表示图像会在边界范围内尽可能放大，但是会保持导入时的宽高比。
+	- Sliced: 图片将使用9分方式显示，边界不拉伸，只有中心拉伸。
+	- Tiled: 拼贴原图，就是平铺。
+	- Filled: 可以控制填充的起始位置，可以做血条或则汽车速度表。
+	
+## 5 text
+
+用于在UI内渲染文字。
 
